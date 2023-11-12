@@ -16,21 +16,19 @@
 # limitations under the License.
 #
 
-LOCAL_PATH := device/redmi/rosemary
+LOCAL_PATH := device/xiaomi/earth
 
 # A/B
 AB_OTA_PARTITIONS += \
-    boot \
-    dtbo \
-    lk \
-    preloader \
-    product \
     system \
-    vbmeta \
-    vbmeta_system \
-    vbmeta_vendor \
+    system \
     vendor \
-    vendor_boot
+    vendor \
+    product \
+    product \
+    boot \
+    vbmeta_vendor \
+    vbmeta_system
     
 AB_OTA_POSTINSTALL_CONFIG += \
     RUN_POSTINSTALL_system=true \
@@ -49,7 +47,7 @@ PRODUCT_USE_DYNAMIC_PARTITIONS := true
 PRODUCT_TARGET_VNDK_VERSION := 31
 
 # API
-PRODUCT_SHIPPING_API_LEVEL := 30
+PRODUCT_SHIPPING_API_LEVEL := 31
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.build.security_patch=2099-12-31
@@ -65,13 +63,6 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES_DEBUG += \
     bootctl
-
-PRODUCT_PACKAGES += \
-    android.hardware.vibrator-service.rosemary
-
-# Copy the vibrator into recovery image
-PRODUCT_COPY_FILES += \
-	$(OUT_DIR)/target/product/rosemary/system/bin/hw/android.hardware.vibrator-service.rosemary:$(TARGET_COPY_OUT_RECOVERY)/root/system/bin/hw/android.hardware.vibrator-service.rosemary
 
 # Fastbootd
 PRODUCT_PACKAGES += \
@@ -91,4 +82,3 @@ PRODUCT_PACKAGES += \
     update_engine \
     update_verifier \
     update_engine_sideload
-
