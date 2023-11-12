@@ -22,6 +22,9 @@
 FDEVICE="earth"
 #set -o xtrace
 
+# Installs gsi keys into ramdisk, to boot a developer GSI with verified boot.
+$(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_keys.mk)
+
 fox_get_target_device() {
 	local chkdev=$(echo "$BASH_SOURCE" | grep -w $FDEVICE)
 	if [ -n "$chkdev" ]; then
