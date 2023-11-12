@@ -72,7 +72,4 @@ if [ -f "$(gettop)/bootable/recovery/orangefox.cpp" ]; then
                 # Other OrangeFox configs
 		export OF_ENABLE_LPTOOLS=1
 		export OF_ALLOW_DISABLE_NAVBAR=0
-            fi
-        fi
-    fi
 fi
