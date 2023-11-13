@@ -22,6 +22,9 @@ ALLOW_MISSING_DEPENDENCIES := true
 # Build hacks
 BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
 
+# Installs gsi keys into ramdisk, to boot a developer GSI with verified boot.
+$(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_keys.mk)
+
 DEVICE_PATH := device/xiaomi/earth
 PREBUILT_PATH := $(DEVICE_PATH)/prebuilt
 
