@@ -48,6 +48,7 @@ if [ -f "$(gettop)/bootable/recovery/orangefox.cpp" ]; then
 		# Device info
 		export OF_AB_DEVICE=1
 		export OF_VIRTUAL_AB_DEVICE=1
+  		export TARGET_DEVICE_ALT="secret, maltose"
 		
 		# OTA / DM-Verity / Encryption
 		export OF_DISABLE_MIUI_OTA_BY_DEFAULT=1
