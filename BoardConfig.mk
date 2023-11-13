@@ -22,9 +22,6 @@ ALLOW_MISSING_DEPENDENCIES := true
 # Build hacks
 BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
 
-# Installs gsi keys into ramdisk, to boot a developer GSI with verified boot.
-$(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_keys.mk)
-
 DEVICE_PATH := device/xiaomi/earth
 PREBUILT_PATH := $(DEVICE_PATH)/prebuilt
 
@@ -94,7 +91,7 @@ BOARD_BOOTIMAGE_PARTITION_SIZE := 67108864
 BOARD_SUPER_PARTITION_SIZE := 9126805504
 BOARD_SUPER_PARTITION_GROUPS := xiaomi_dynamic_partitions
 
-BOARD_MAIN_PARTITION_LIST := system vendor product
+BOARD_MAIN_PARTITION_LIST := system system vendor vendor product product
 BOARD_MAIN_SIZE := 9122611200
 
 # File systems
